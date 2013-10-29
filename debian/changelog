@@ -1,3 +1,11 @@
+stomp.py (4.0.2+nmu1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release.
+  * Fix ACK response.
+
+ -- Jakob Kemi <jakob.kemi@gmail.com>  Tue, 29 Oct 2013 11:18:37 +0100
+
 stomp.py (3.1.1) stable; urgency=low
 
   * Fix for encoding problems (issue #34) [Jayson Vantuyl]
