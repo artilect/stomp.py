@@ -114,11 +114,13 @@ class Protocol11(HeartbeatListener, ConnectionListener):
         headers[HDR_TRANSACTION] = transaction
         self.__send_frame(CMD_ABORT, headers)
 
-    def ack(self, id, transaction = None):
+    def ack(self, id, transaction = None, message_id = None):
         assert id is not None, "'id' is required"
-        headers = { HDR_ID : id }
+        headers = { 'subscription' : id }
         if transaction:
             headers[HDR_TRANSACTION] = transaction
+        if message_id:
+            headers['message-id'] = message_id
         self.__send_frame(CMD_ACK, headers)
 
     def begin(self, transaction = None, headers = {}, **keyword_headers):
